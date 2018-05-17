@@ -1,0 +1,873 @@
+/*
+Theme Name: kelpie
+Theme URI: 	http://shabbir.me/
+Author: Mostafiz Shabbir
+Author URI:  http://facebook.com/shabbir3g
+Description: This is WordPress theme created by mostafiz shabbir. This theme brings your site to life immersive featured images. You can easily customize this theme as you want.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: kelpie
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Carter+One');
+
+@font-face {
+  font-family: "mostserrat";
+  src: url("webfonts/fonts/mostserrat.eot");
+  src: url("webfonts/fonts/mostserrat/OpenSans.woff") format("woff"), url("webfonts/fonts/mostserrat.ttf") format("truetype"), url("webfonts/fonts/mostserrat.otf") format("opentype"), url("webfonts/fonts/mostserrat.svg") format("svg");
+}
+
+@font-face {
+  font-family: "SugarCandy";
+  src: url("webfonts/fonts/SugarCandy.eot");
+  src: url("webfonts/fonts/SugarCandy/OpenSans.woff") format("woff"), url("webfonts/fonts/SugarCandy.ttf") format("truetype"), url("webfonts/fonts/SugarCandy.otf") format("opentype"), url("webfonts/fonts/SugarCandy.svg") format("svg");
+}
+
+@font-face {
+  font-family: "Cornerstone";
+  src: url("webfonts/fonts/Cornerstone.eot");
+  src: url("webfonts/fonts/Cornerstone/OpenSans.woff") format("woff"), url("webfonts/fonts/Cornerstone.ttf") format("truetype"), url("webfonts/fonts/Cornerstone.otf") format("opentype"), url("webfonts/fonts/Cornerstone.svg") format("svg");
+}
+
+
+/*================================
+    Header Part Start
+================================*/
+body {	
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1f1f1f;	
+    background: #fff;
+}
+
+a:hover {text-decoration: none;}
+.parallax-bg {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;  
+  background-position: 50% 0%;        
+  transition: all 0.3s ease;
+}
+.parallax-page-bg {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;  
+  background-position: 50% 0%;        
+  transition: all 0.3s ease;
+}
+body.page-template-faq .parallax-page-bg, body.page-template-tandc .parallax-page-bg{
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  overflow: hidden;  
+  background-position: 50% 0%;        
+  transition: all 0.3s ease;
+}
+body.page-template-faq .parallax-page-bg .main-menu-bottom, body.page-template-tandc .parallax-page-bg .main-menu-bottom {
+  margin-top: 30px;
+}
+
+.menu-left a {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0px;
+  transition: color .35s ease;  
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  font-family: "Cornerstone";
+  color: #ffffff;
+}
+.menu-left a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  transition: width 0s ease, background .35s ease;
+}
+.menu-left a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #ffffff;
+  transition: width .35s ease;
+}
+.menu-left a:hover:before {
+  width: 100%;
+  background: #ffffff;
+  transition: width .35s ease;
+}
+.menu-left a:hover:after {
+  width: 100%;
+  background: transparent;
+  transition: all 0s ease;
+}
+header nav .logo {
+  float: left;
+ padding-top: .25rem;
+ padding-bottom: .25rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  font-weight: 500; color: black; 
+}
+header nav .logo:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+header nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+header nav ul li {
+  float: none;
+  margin-left: 0;
+}
+header nav ul li a { display: block; }
+@media (min-width: 576px) {
+header nav ul li a { display: block;  padding: .425rem 0rem;
+}
+}
+ @media (max-width: 768px) {
+ul { clear: both; }
+ }
+.hide-nav {
+ transform: translateY(-120% !important); -webkit-transform: translateY(-120%) !important; }
+ul.menu-left {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  z-index: 10;
+}
+ul.menu-left:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+ul.menu-left.collapse { max-height: 15em !important; }
+.nav-toggle {
+  display: block;
+  border-radius: 5px;
+  background-color: transparent;
+  float: right;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  padding: 8px 8px;
+}
+.nav-toggle.open span:first-child { transform: rotate(45deg) translate(4.4px, 4.4px); }
+.nav-toggle.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+.nav-toggle.open span:last-child { transform: rotate(-45deg) translate(4.4px, -4.4px); }
+@media (min-width: 768px) {
+.nav-toggle { display: none; }
+ul.menu-left {
+  display: block !important;
+  float: right;
+  max-height: none;
+  z-index: 99;  
+}
+header nav ul li {
+  float: left;
+  margin-left: 1rem;
+}
+.main-menu:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+}
+.nav-toggle span {
+  position: relative;
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-top: 4px;
+  background-color: #1f1f1f;
+  transition: all .25s;
+}
+.nav-toggle-ab span {
+  position: relative;
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-top: 4px;
+  background-color: #fff;
+  transition: all .25s;
+}
+.main-menu {
+  padding: 10px 0px;
+}
+.main-menu-bottom {
+  margin-top: 250px;
+}
+.main-menu-bottom h3 {
+  font-size: 61px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  font-family: "Cornerstone";
+  color: #ffffff;
+}
+.main-menu-bottom img {
+  position: relative;
+  top: -35px;
+}
+/*================================
+    helpyou Part Start
+================================*/
+.helpyou {
+  background: #fff;
+  padding: 70px 0px 100px 0px;
+}
+.helpyou-part span {
+  display: block; 
+  width: 60px;
+  height: 1px;
+  background: #1f1f1f;
+  margin: 15px auto;
+}
+.helpyou-part h3 {
+   font-size: 30px;
+   font-weight: bold;
+   font-family: "Cornerstone";
+   color: #000000;
+}
+.helpyou-part p {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  width: 54%;
+  margin: auto;
+  
+}
+
+/*================================
+    main Part Start
+================================*/
+.main-part-right{
+	display: table;
+	
+}
+.main-part-right p{
+	font-size: 18px;  
+	padding: 15px;
+	font-family: 'Roboto', sans-serif;
+	vertical-align: middle;
+	display: table-cell;
+	height: 550px;
+	font-weight: 300;
+}
+
+/*================================
+    footer Part Start
+================================*/
+
+.footer-top {
+  padding: 10px;
+  margin-top: 40px;
+}
+.footer-bottom p{
+	padding: 10px 0;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 0;
+}
+.footer-bottom p span{
+	font-family: "SugarCandy";
+}
+.footer-right ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  float: right;
+}
+.footer-left {
+	width: 280px;
+}
+.footer-left img {
+  margin-top: 10px;
+  width: 100%;
+}
+.footer-right ul{
+	margin-top: 35px;
+}
+.footer-right ul li {
+  float: left;
+ 
+}
+
+.footer-right ul li a {
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	padding: 0px 22px;
+	font-size: 15px;
+	border-right: 2px solid #ffffff;
+}
+.footer-right ul li:last-child a{
+	border-right: none;
+}
+
+.contact-bg {
+  background: url(images/contactbg.jpg) no-repeat;
+  padding: 10px 0px;
+  background-position: center;
+  background-size: cover;
+}
+.menu-left-ab a:hover:before {
+  background: #fff;
+}
+.menu-left-ab a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #fff;
+  transition: width .35s ease;
+}
+.menu-left-ct a {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0px;
+  transition: color .35s ease;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 15px;
+}
+.main-menu-bottom-ct h3 {
+  color: #fff;
+}
+.getin {
+  padding: 80px 0px;
+}
+.getin-part h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f1f1f;
+}
+.getin-part span {
+  width: 70px;
+  height: 1px;
+  display: block;
+  margin: 30px auto 15px;
+  background: #1f1f1f;
+}
+.fotter-top-left h3{
+	 font-family: "Cornerstone";
+	 text-align: center;
+}
+.fotter-top-left input[type="text"],
+.fotter-top-left input[type="email"],
+.fotter-top-left input[type="tel"],
+.fotter-top-left textarea {
+  width: 100%;
+  padding: 2px 5px;
+  background: #ffffff;
+  color: #bbb;  
+  border: none;  
+  margin-bottom: 15px;
+  border: 1px solid #bbb;
+}
+.fotter-top-left input[type="submit"] {
+  float: right;
+   padding: 4px 15px;
+  background: #1f1f1f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+.fotter-top-left input[type="submit"]:hover {
+  background: rgba(0,0,0,.6);
+}
+.fotter-top-meddle span {
+  width: 1px;
+  height: 400px;
+  background: #ccc;
+  display: block;
+  margin: auto;
+}
+.fotter-top {
+  padding: 100px 0px;
+}
+.fotter-top-right img {
+  display: block;
+  margin: 20px 0px;
+}
+
+
+
+
+
+/*new design*/
+
+
+.logo {
+	width: 79px;
+}
+.logo img{
+	width: 100%;
+}
+
+.imagecommon img{
+	width: 100%;
+}
+.box-home{
+	overflow: hidden;
+}
+.boxs-half{
+	width: 50%;
+	float: left;
+	
+}
+.box-home:nth-child(even) .boxs-half{
+	width: 50%;
+	float: right;
+}
+.imagecommon{
+	position: relative;
+}
+.blur-image {
+	width: 0;
+	height: 0;
+	background: rgba(216,216,216,.7);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: 1s;
+	overflow: hidden;
+}
+.imagecommon:hover .blur-image {
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+
+.nav-toggle {
+	padding: 33px 8px;
+}
+.nav-toggle span {
+	background-color: #fff;
+}
+.header-top-fixed {
+    width: 100%;
+    color:#fff;
+    z-index: 1000;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s;
+    text-align:center;
+}
+.ind-03-menu ul {
+	margin: 18px 0;
+	padding: 0;
+	text-align: center;
+}
+.header-top-fixed.shrink {
+   
+	position: fixed;
+    top: 0;
+    left: 0;
+}
+.header-top-fixed.shrink ul li a{
+	color: #fff;
+}
+ul.menu-left {
+	margin-top: 20px;
+}
+.footer-toppart {
+	padding: 50px 0;
+	width: 43%;
+	margin: auto;
+}
+.footer-topparts h3 {
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "Cornerstone";
+	color: #000000;
+}
+.footer-topparts p {
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	margin: auto;
+}
+.footer-topparts p span{
+	font-weight: 600;
+	font-style: italic;
+}
+
+/* about us */
+.about-text{
+	padding: 50px 0;
+}
+.about-text .container{
+	border: 3px solid #000000;
+	padding: 10px 0;
+}
+.about-text .about-part{
+	padding: 45px;
+}
+.about-text .about-part p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+.about-img img{
+	width: 100%;
+}
+.about-img .container{
+	padding: 50px 0;
+}
+
+
+/* our vans*/
+
+
+.vans-half{
+	width: 50%;
+	float: left;
+	
+}
+.vans-half .imagecommon{
+	height: 450px;
+	
+}
+.imagecommon{
+	position: relative;
+}
+.vans-image {
+	/* width: 0; */
+	/* height: 0; */
+	background: rgba(0,0,0,.7);
+	position: absolute;
+	/* top: 50%; */
+	/* left: 50%; */
+	transition: 1s;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+}
+.imagecommon:hover .vans-image {
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+}
+
+.image-top-text {
+	width: 68%;
+	margin: auto;
+	padding-top: 25%;
+	text-align: center;
+}
+
+.image-top-text  h3{
+	 font-family: "Cornerstone";
+	 color: #fff;
+}
+.single-page h3{
+	 font-family: "Cornerstone";
+	 color: #000;
+}
+.single-page  p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #000;
+}
+.image-top-text  p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #fff;
+}
+.our-vans-title {
+	padding: 50px 0;
+}
+.our-vans-title h2{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.whats-included{
+	padding: 50px 0;
+}
+
+.our-included-title{
+	 font-family: "Cornerstone";
+	 color: #fff;
+	 text-align:center;
+}
+.whats-list {
+	width: 60%;
+	
+}
+.whats-list li{
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	list-style: none;
+	line-height: 28px;
+}
+
+.whats-list li::before {
+	content: '\f058';
+	font-family: Font Awesome\ 5 Free;
+	font-weight: 400;
+	font-size: 35px;
+	margin-right: 37px;
+	position: relative;
+	top: 27px;
+	display: block;
+	right: 62px;
+}
+.address{
+	margin-top: 80px;
+}
+.address p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #000;
+	margin: 0;
+	
+}
+.address-top {
+	margin-bottom: 20px;
+}
+
+.hires-top h2{
+	font-family: "Cornerstone";
+}
+.hires-top ul {
+	padding: 13px;
+}
+.hires-top ul li{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+
+/*accordion*/
+.faq-toppart {
+	padding: 50px 0;
+	margin: auto;
+	width: 90%;
+}
+
+.panel-heading .accordion-toggle:after {
+	content:"\f105";
+	font-family: Font Awesome\ 5 Free;
+	font-weight: 900;
+    float: right; 
+    color: #000;
+	border: 2px solid #000;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 24px;
+}
+.panel-heading .accordion-toggle[aria-expanded="true"]:after {
+    /* symbol for "collapsed" panels */
+    content: "\f107";    /* adjust as needed, taken from bootstrap.css */
+	font-family: Font Awesome\ 5 Free;
+	font-weight: 900;
+	 color: #000;
+	border: 2px solid #000;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 24px;
+}
+
+.faq-content .panel-heading a{
+	color: #000000;
+	font-family: "Cornerstone";
+	display: block;
+}
+.faq-content .panel-body{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	
+}
+.faq-content .panel-heading {
+	padding: 22px 14px;
+	box-shadow: 0px 1px 0px 1px #ccc;
+	margin-bottom: 19px;
+}
+.faq-content .panel-collapse {
+	padding: 32px 14px;
+	box-shadow: 0px 1px 0px 1px #ccc;
+	height: inherit !important;
+	margin-bottom: 19px;
+}
+
+
+
+/* t&c style*/
+
+
+.tandc-content {
+	overflow: hidden;
+}
+.tandc-left{
+	width: 31%;
+	float: left;
+}
+.tandc-right{
+	width: 31%;
+	float: right;
+	text-align: right;
+}
+.tandc-content h2{
+	font-family: "Cornerstone";
+}
+.tandc-content p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+.tandc-content h3{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+}
+.tandc-content ul {
+	margin: 0;
+	padding: 16px;
+}
+.tandc-content ul li span{
+	color: #fff;
+}
+.tandc-content p span{
+	color: #fff;
+}
+
+
+
+@media all and (max-width: 767px){
+	.boxs-half {
+		width: 100%;
+		float: none;
+	}
+	.box-home:nth-child(2n) .boxs-half {
+		width: 100%;
+		float: none;
+	}
+	.main-part-right p {
+		padding: 50px 0;
+		height: inherit;
+	}
+	.footer-right ul {
+		float: none;
+	}
+	.helpyou-part p {
+		width: 80%;
+	}
+	.footer-toppart {
+		width: 80%;
+	}
+	.footer-left {
+		margin: auto;
+	}
+	.footer-right {
+		text-align: center;
+	}
+	.footer-right ul li {
+		float: none;
+		display: inline-block;
+	}
+	.imagecommon img {
+		width: 100%;
+		height: 100%;
+	}
+	.vans-half .imagecommon {
+		height: 300px;
+	}
+	.whats-list {
+		width: 70%;
+		margin: auto;
+	}
+	.tandc-left {
+		width: 40%;
+	}
+	.tandc-right {
+		width: 40%;
+	}
+}
+@media all and (max-width: 414px){
+	.tandc-left {
+		width: 100%;
+		float: none;
+	}
+	.tandc-right {
+		width: 100%;
+		float: none;
+	}
+	.footer-right ul li a {
+		padding: 0px 22px;
+		border-right: none;
+	}
+	.footer-right ul li {
+		display: block;
+	}
+	.faq-content .panel-heading a {
+		font-size: 16px;
+	}
+	.panel-heading .accordion-toggle::after {
+		width: 20px;
+		height: 20px;
+		font-size: 15px;
+	}
+	.main-menu-bottom img {
+		width: 80%;
+		margin-top: 13px;
+	}
+	.footer-toppart {
+		width: 100%;
+	}
+	.parallax-page-bg,.parallax-bg {
+		height: 80vh;
+	}
+	.about-text .container {
+		border: 3px solid #000000;
+		padding: 15px;
+	}
+	.our-vans-title h2 {
+		font-size: 17px;
+	}
+	.vans-half {
+		width: 100%;
+		float: none;
+	}
+}
