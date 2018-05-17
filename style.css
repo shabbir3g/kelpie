@@ -52,6 +52,7 @@ a:hover {text-decoration: none;}
   overflow: hidden;  
   background-position: 50% 0%;        
   transition: all 0.3s ease;
+  background-attachment: fixed;
 }
 .parallax-page-bg {
   background-size: cover;
@@ -60,6 +61,7 @@ a:hover {text-decoration: none;}
   overflow: hidden;  
   background-position: 50% 0%;        
   transition: all 0.3s ease;
+   background-attachment: fixed;
 }
 body.page-template-faq .parallax-page-bg, body.page-template-tandc .parallax-page-bg{
   background-size: cover;
@@ -68,6 +70,7 @@ body.page-template-faq .parallax-page-bg, body.page-template-tandc .parallax-pag
   overflow: hidden;  
   background-position: 50% 0%;        
   transition: all 0.3s ease;
+   background-attachment: fixed;
 }
 body.page-template-faq .parallax-page-bg .main-menu-bottom, body.page-template-tandc .parallax-page-bg .main-menu-bottom {
   margin-top: 30px;
@@ -394,6 +397,8 @@ header nav ul li {
   border: none;  
   margin-bottom: 15px;
   border: 1px solid #bbb;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 .fotter-top-left input[type="submit"] {
   float: right;
@@ -403,6 +408,8 @@ header nav ul li {
   border: none;
   cursor: pointer;
   transition: 0.3s all ease;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 .fotter-top-left input[type="submit"]:hover {
   background: rgba(0,0,0,.6);
@@ -430,7 +437,7 @@ header nav ul li {
 
 
 .logo {
-	width: 79px;
+	width: 60px;
 }
 .logo img{
 	width: 100%;
@@ -463,6 +470,7 @@ header nav ul li {
 	left: 50%;
 	transition: 1s;
 	overflow: hidden;
+	display: none;
 }
 .imagecommon:hover .blur-image {
 	top: 0;
