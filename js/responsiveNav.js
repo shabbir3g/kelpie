@@ -1,3 +1,5 @@
+(function($){
+
 // back to top 
 $('.logo').on('click', function(e) {
   e.preventDefault();
@@ -51,3 +53,4 @@ setInterval(function() {
     }
 }, 250);
 
+})(jQuery);
